@@ -6,6 +6,7 @@ app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
 
+// http://localhost:8787/api/hello
 app.get('/api/hello', (c) => {
   return c.json({
     ok: true,
@@ -13,6 +14,7 @@ app.get('/api/hello', (c) => {
   })
 })
 
+// http://localhost:8787/posts/123?page=456
 app.get('/posts/:id', (c) => {
   const page = c.req.query('page')
   const id = c.req.param('id')
